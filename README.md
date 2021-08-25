@@ -5,7 +5,7 @@ Antes de iniciar, se for publicar o código em algum lugar, **não utilize o nom
 * No dia marcado para a entrevista técnica haverá uma discussão sobre as decisões e questões técnicas baseadas no seu código;
 * Não estamos buscando uma solução absolutamente perfeita, buscamos uma solução de acordo com seu nível e funcional (se seu nível é de SR, esperamos ver uma solução com nível de SR);
 * Limite de tempo: 1 semana;
-* Após finalizar o teste envie o link do repositórios para career@estoca.com.br
+* Após finalizar o teste envie o link do repositórios para careers@estoca.com.br
 
 # Tecnologias
 Se possível, as seguintes tecnologias devem ser utilizadas para resolver esse desafio. Entendemos que é possível que você não tenha muita experiência com essas tecnologias, mas para nós é muito importante entender a capacidade de um engenheiro de aprender.
