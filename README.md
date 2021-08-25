@@ -1,3 +1,4 @@
+Bem vinda(o) ao nosso challenge para pessoas de engenharia. 
 Antes de iniciar, se for publicar o código em algum lugar, **não utilize o nome da Estoca em nenhuma parte**.
 
 # Considerações sobre o desafio
