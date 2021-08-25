@@ -1,27 +1,26 @@
 Antes de iniciar, se for publicar o código em algum lugar, **não utilize o nome da Estoca em nenhuma parte**.
 
-# Considerações sobre o desafio:
+# Considerações sobre o desafio
 * O teste deve ser realizada por somente uma pessoa;
 * No dia marcado para a entrevista técnica haverá uma discussão sobre as decisões e questões técnicas baseadas no seu código;
 * Não estamos buscando uma solução absolutamente perfeita, buscamos uma solução de acordo com seu nível e funcional (se seu nível é de SR, esperamos ver uma solução com nível de SR);
 * Limite de tempo: 1 semana;
 * Após finalizar o teste envie o link do repositórios para career@estoca.com.br
 
-# Tecnologias:
+# Tecnologias
 Se possível, as seguintes tecnologias devem ser utilizadas para resolver esse desafio. Entendemos que é possível que você não tenha muita experiência com essas tecnologias, mas para nós é muito importante entender a capacidade de um engenheiro de aprender.
 
-## Linguagens desejadas: 
 * Python / Django
 * Javascript / NodeJS
 
-# O que será avaliado:
+# O que será avaliado
 * Design de código, práticas e padrões;
 * Conhecimento da linguagem e de orientação a objetos;
 * Utilização correta de git;
-* Comentários e documentação no readme do projeto;
+* Comentários, documentação das decisões e como rodar o projeto no readme do projeto;
 * Construção de testes;
 
-# Considerações técnicas: 
+# Considerações técnicas 
 * Se você for utilizar novas estruturas para armazenar/recuperar informações nos cenários abaixo, apenas descreva no código a forma dessas estruturas (e.g. nova tabela no banco que tenha os campos X, Y e Z), não é necessário desenvolver um código com a criação das estruturas. O que queremos entender é como você irá usar esses recursos.
 * Se necessário, pode considerar que existe um ORM que busca e grava informações de eficientemente
 
@@ -32,11 +31,11 @@ Se possível, as seguintes tecnologias devem ser utilizadas para resolver esse d
 Você precisa integrar pedidos de um sistema ERP onde a API te envia um JSON [com o padrão que está aqui](#retorno-api-de-pedidos)
 . Esse sistema não tem uma funcionalidade de webhook em que você é notificado cada vez que um novo pedido é criado. Considerando que você consulta a API a cada 5 minutos, desenvolva uma função que salva novos pedidos.
 
-### Considerações:
+### Considerações
 Output esperado:
 ID dos pedidos criados
 
-#### As seguintes funções já existem: 
+#### As seguintes funções já existem 
 **save_order_to_db(_order)** 
 * Recebe a estrutura [que está aqui](#retorno-pedido-get-orders)
 * Salva as informações nas tabelas do banco de dados
@@ -51,14 +50,14 @@ ID dos pedidos criados
 
 Para um controle efetivo do estoque, para cada novo pedido criado deve ser feito uma reserva de estoque antes da separação do pedido. Considerando que a entrada do estoque é realizada por um registro único por cada item em uma tabela **inventory_entry** (i.e. cada registro representa uma entrada), desenvolva duas funções **(1)** que verifica se existe estoque disponível e **(2)** outra que realiza a reserva do estoque. 
 
-### Considerações:
+### Considerações
 Input esperado:
 Pedido com a estrutura [que está aqui](#retorno-api-de-pedidos)
 
 Output esperado:
 ID dos pedidos criados
 
-#### As seguintes funções já existem: 
+#### As seguintes funções já existem
 **get_inventory_entries(_sku)** 
 * Recebe o sku (código único) de um item de um pedido
 * Retorna as entradas deste item no formato [que está aqui](#retorno-inventory)
@@ -68,7 +67,7 @@ ID dos pedidos criados
 Para controle de estoque acurado é preciso entender bem quais itens comprar com antecedência para que não ocorra quebra de estoque mas que também não se utilize muito tempo de estoque. 
 Desenvolva uma função que estime quanto tempo um determinado SKU vai durar dentro do estoque. 
 
-### Considerações:
+### Considerações
 Input esperado:
 Pedido com a estrutura [que está aqui](#retorno-api-de-pedidos)
 
