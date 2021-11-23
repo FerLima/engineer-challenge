@@ -1,0 +1,19 @@
+{
+  "name": "engineer-challenge",
+  "version": "1.0.0",
+  "description": "teste técnico realizado para a entrevista",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Estoca/engineer-challenge.git"
+  },
+  "author": "Fernando Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Estoca/engineer-challenge/issues"
+  },
+  "homepage": "https://github.com/Estoca/engineer-challenge#readme"
+}
