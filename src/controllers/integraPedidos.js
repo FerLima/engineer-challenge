@@ -30,7 +30,7 @@
     return Math.round(Math.random() * 10000000)
   }
 
-  const main = () =>{
+  const main = (req, res) =>{
     try {
       // pega o dia de hoje formatado para os filtros
       const _filters = getTodayFormatted()
