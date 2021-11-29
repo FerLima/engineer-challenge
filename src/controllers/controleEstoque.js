@@ -1,7 +1,4 @@
-const { setLog } = require('../helpers/log');
-
-module.exports = () => { 
-    const controller = {};
+    const { setLog } = require('../helpers/log');
 
     //Aqui interpretei que a tabela inventory_entry vai ter as entradas de estoque do pedido, 
     //logo dentro dela é que deve ser consultado se o item tem algum inventario disponivel
@@ -60,7 +57,7 @@ module.exports = () => {
         return {message:"informação alterada com sucesso"}
     }
 
-    controller.controleEstoque = (req, res) => { 
+    const main = (req, res) => {
         // recebe o pedido na estrutura mencionada
         const pedido = req.body;
 
@@ -90,5 +87,11 @@ module.exports = () => {
             res.status(500).json({message: "Erro na validação de estoque, tente novamente mais tarde"})
         }
     }
-    return controller;
-}
+
+    const index = () => {
+        const controller = {};
+        controller.controleEstoque = (req, res) => main(req,res)
+        return controller;
+    }
+
+    module.exports = {index,main}
