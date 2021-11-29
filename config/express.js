@@ -14,7 +14,6 @@ module.exports = () => {
 
     //  biblioteca para facilitar o gerenciamento das rotas do express
     consign({cwd: 'src'})
-    .then('data')
     .then('controllers')
     .then('routes')
     .into(app)
