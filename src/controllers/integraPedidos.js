@@ -9,7 +9,8 @@
     return `${hoje.getFullYear()}-${hoje.getMonth()}-${hoje.getDate()}`
   }
   //função que retorna os pedidos da integração (ja existe no desafio)
-  const get_orders = () => {
+  const get_orders = (_filters = null, test = null) => {
+    if (test) return test
     return integraPedidosDB
   }
   // função que recebe um array de pedidos e retorna os que são dos ultimos 5 minutos
@@ -32,11 +33,12 @@
 
   const main = (req, res) =>{
     try {
+      const integraTesteDB =  req.hasOwnProperty('test') ? req.test : null 
       // pega o dia de hoje formatado para os filtros
       const _filters = getTodayFormatted()
 
       //consulta os pedidos feitos hoje no ERP 
-      const orders = get_orders(_filters)
+      const orders = get_orders(_filters, integraTesteDB)
 
       //filtra os pedidos por periodo, se tem pedidos novos nesses ultimos 5 minutos (periodo da ultima consulta)
       const pedidosDB = filtrarPedidos(orders)
@@ -48,23 +50,27 @@
           const idPedido = save_order_to_db(pedido)
           pedidos.push({id:idPedido})
         })
-        res.status(200).json({message:"Pedidos incluidos com sucesso", pedidos})
+        return {status:200, json:{message:"Pedidos incluidos com sucesso", pedidos}}
       }
       // se não tem pedidos novos retorna mensagem de nenhum pedido incluido
       else{
-        res.status(200).json({message: "Nenhum pedido incluido "})
+        return {status:200, json:{message: "Nenhum pedido incluido "}}
       }
     }catch(err) {
       // salva o log do erro
       setLog(err)
-      res.status(500).json({message:"Algo deu errado, tente novamente mais tarde"})
+      console.log("err",err);
+      return {status:500, json:{message:"Algo deu errado, tente novamente mais tarde"}}
     }
   }
 
   const index = () =>{
     // 1 - Integração de pedidos
     const controller = {};
-    controller.integraPedidos = (req, res) => main(req,res)
+    controller.integraPedidos = (req, res) =>{ 
+      const response = main(req,res)
+      res.status(response.status).json(response.json)
+    }
     return controller;
   }
-  module.exports = {index,main}
+  module.exports = {index,main, filtrarPedidos}

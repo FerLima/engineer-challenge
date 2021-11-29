@@ -70,9 +70,9 @@
                 const estoque = get_inventory_entries(item.Sku)
                 //valida se alguma entrada de estoque tem estoque suficiente para esse pedido
                 const inventarioSelecionado = validaEntrada(estoque, item)
-                //se tem estoque faz um registro na tabela de reserva e desconta da entrada de estoque
-                if (inventarioSelecionado.temEstoque){
-                    console.log(item,inventarioSelecionado, pedido)
+                
+                if (inventarioSelecionado.temEstoque){    
+                    //se tem estoque faz um registro na tabela de reserva e desconta da entrada de estoque
                     pedidos.push(reservaEstoque(item,inventarioSelecionado, pedido))
                 }else{
                     // se não tem estoque nao gera salva na tabela de pedidos e retorna no final da requisição o id
@@ -80,17 +80,20 @@
                 }
             })
             // retorna na API os ids dos pedidos criados e os items sem estoque 
-            res.status(200).json({message: "Validação de estoque realizada com sucesso ", pedidosCriados: pedidos, itemSemEstoque: outOfStock})
+            return { status: 200, json: {message: "Validação de estoque realizada com sucesso ", pedidosCriados: pedidos, itemSemEstoque: outOfStock}}
         }catch(err){
             setLog(err)
-            console.log('err', err);
-            res.status(500).json({message: "Erro na validação de estoque, tente novamente mais tarde"})
+
+            return {status:500, json:{message: "Erro na validação de estoque, tente novamente mais tarde"}}
         }
     }
 
     const index = () => {
         const controller = {};
-        controller.controleEstoque = (req, res) => main(req,res)
+        controller.controleEstoque = (req, res) => {
+            const response = main(req,res)
+            res.status(response.status).json(response.json)
+        }
         return controller;
     }
 
