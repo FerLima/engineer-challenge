@@ -27,6 +27,7 @@ module.exports = () => {
 
     // salva o pedido no banco e gera um ID de pedido (ja existe no desafio)
     const save_order_to_db = (order) =>{
+      // -- inserção no banco -- 
       return Math.round(Math.random() * 10000000)
     }
 

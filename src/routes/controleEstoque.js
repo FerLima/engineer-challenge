@@ -1,5 +1,3 @@
-routes/controleestoque
-
 module.exports = app => {
     const controller = app.controllers.controleEstoque
   
