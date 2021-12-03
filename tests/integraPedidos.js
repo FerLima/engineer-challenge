@@ -3,7 +3,8 @@
 const chai = require('chai')
 const expect = chai.expect
 const should = chai.should()
-//Esse nao foi pra dentro do data test pois o created precisa ser dinamico pra ser feito nos ultimos 5 minutos
+
+//Esse nao foi pra dentro do data test pois o campo created_at precisa ser dinamico pra ser feito nos ultimos 5 minutos
 const ordersValidos = [
     {
         "id": "21b1c6e4-9d7f-4f78-8e82-19491a0f5a12",

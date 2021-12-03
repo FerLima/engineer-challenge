@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Estoca/engineer-challenge.git"
+    "url": "git+https://github.com/FerLima/engineer-challenge.git"
   },
   "author": "Fernando Lima",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Estoca/engineer-challenge/issues"
+    "url": "https://github.com/FerLima/engineer-challenge/issues"
   },
-  "homepage": "https://github.com/Estoca/engineer-challenge#readme",
+  "homepage": "https://github.com/FerLima/engineer-challenge#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "chai": "^4.3.4",
