@@ -4,11 +4,11 @@
 
 Esse é um projeto pessoal para fins de análise.
 
-Nele foi implementado 3 rotas de acordo com os 3 desafios passados para a conclusão do mesmo, e elas são:
+Nele foi implementado 3 rotas de acordo com os 3 desafios passados para a conclusão do mesmo, e elas são, respectivamente:
 
-* /api/v1/dicionarioSku
-* /api/v1/controleEstoque
-* /api/v1/integraPedidos
+* 1 - /api/v1/integraPedidos
+* 2 - /api/v1/controleEstoque
+* 3 - /api/v1/dicionarioSku
 
 Para simular o "banco de dados" utilizei da pasta "/src/data" com os jsons esperados
 ### 📋 Pré-requisitos
