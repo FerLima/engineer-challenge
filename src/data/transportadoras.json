@@ -1,0 +1,37 @@
+
+[{
+    "nomeRegistro": "Express Delivery SP Capital",
+    "nomeTransportadora": "Express Delivery",
+    "id":"1",
+    "faixaCEPInicial":1000000,
+    "faixaCEPFinal":5999999, 
+    "mediaDias":"6 dias", 
+    "dataCriacao":"2021-01-01T10:23:23"
+},
+{
+    "nomeRegistro": "Express Delivery SP Interior",
+    "nomeTransportadora": "Express Delivery",
+    "id":"2",
+    "faixaCEPInicial":12000000,
+    "faixaCEPFinal":19999999, 
+    "mediaDias":"12 dias", 
+    "dataCriacao":"2021-01-01T10:23:23"
+},
+{
+    "nomeRegistro": "trans 1 RJ capital",
+    "nomeTransportadora": "Trans 1",
+    "id":"3",
+    "faixaCEPInicial":20000000,
+    "faixaCEPFinal":23799999, 
+    "mediaDias":"5 dias", 
+    "dataCriacao":"2021-01-01T10:23:23"
+},
+{
+    "nomeRegistro": "trans 1 RJ Interior ",
+    "nomeTransportadora":"Trans 1",
+    "id":"4",
+    "faixaCEPInicial":26601000,
+    "faixaCEPFinal":28999999, 
+    "mediaDias":"8 dias", 
+    "dataCriacao":"2021-01-01T10:23:23"
+}]
