@@ -6,30 +6,22 @@ const should = chai.should()
 
 const {main} = require('../src/controllers/controleEstoque');
 
-describe('controleEstoque recebe um item com estoque', function(){
+describe('controleEstoque recebe um item com estoque', ()=>{
     // item com a mesma quantidade da entrada de estoque, para retornar com sucesso
-    const body = {
-        "Items": [{
-            "Id": "12_1",
-            "Sku": "PRODUCT_1",
-            "Name": "Awesome Super Product",
-            "Quantity": "1.0",
-            "Price": "2.5"
-        }]
-    }
-    it('teria que retornar alguns pedidos criados', function(){
+    const {body1:body} = require('./dataTest/controleEstoque.json');
+    it('teria que retornar alguns pedidos criados', ()=>{
         const request = main({body}, null)
         const response = request.json
 
         response.should.have.property('pedidosCriados').with.lengthOf(1)
     })
-    it('teria que retornar nenhum item sem estoque', function(){
+    it('teria que retornar nenhum item sem estoque', ()=>{
         const request = main({body}, null)
         const response = request.json
 
         response.should.have.property('itemSemEstoque').with.lengthOf(0)
     })
-    it('id dos pedidos retornados devem ser do tipo inteiro', function(){
+    it('id dos pedidos retornados devem ser do tipo inteiro', ()=>{
         const request = main({body}, null)
         const response = request.json
 
@@ -37,34 +29,26 @@ describe('controleEstoque recebe um item com estoque', function(){
     })
 })
 
-describe('controleEstoque recebe item sem estoque', function() {
-    const body = {
-        "Items": [{
-            "Id": "12_1",
-            "Sku": "PRODUCT_1",
-            "Name": "Awesome Super Product",
-            "Quantity": "2.0",
-            "Price": "2.5"
-        }]
-    }
-    it('teria que retornar items sem estoque', function(){
+describe('controleEstoque recebe item sem estoque', ()=> {
+    const {body2:body} = require('./dataTest/controleEstoque.json');
+    it('teria que retornar items sem estoque', ()=>{
         const request = main({body}, null)
         const response = request.json
         response.should.have.property('itemSemEstoque').with.lengthOf(1)
     })
-    it('teria que retornar nenhum pedido criado', function(){
+    it('teria que retornar nenhum pedido criado', ()=>{
         const request = main({body}, null)
         const response = request.json
 
         response.should.have.property('pedidosCriados').with.lengthOf(0)
     })
-    it('teria que retornar propriedade sku', function(){
+    it('teria que retornar propriedade sku', ()=>{
         const request = main({body}, null)
         const response = request.json
 
         expect(response.itemSemEstoque[0]).to.have.property('sku')
     })
-    it('teria que retornar propriedade sku com string valida', function(){
+    it('teria que retornar propriedade sku com string valida', ()=>{
         const request = main({body}, null)
         const response = request.json
 

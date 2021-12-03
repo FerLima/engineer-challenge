@@ -1,0 +1,20 @@
+{
+    "body1": {
+        "Items": [{
+            "Id": "12_1",
+            "Sku": "PRODUCT_1",
+            "Name": "Awesome Super Product",
+            "Quantity": "1.0",
+            "Price": "2.5"
+        }]
+    },
+    "body2":{
+        "Items": [{
+            "Id": "12_1",
+            "Sku": "PRODUCT_1",
+            "Name": "Awesome Super Product",
+            "Quantity": "2.0",
+            "Price": "2.5"
+        }]
+    }
+}
