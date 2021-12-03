@@ -59,7 +59,6 @@
     }catch(err) {
       // salva o log do erro
       setLog(err)
-      console.log("err",err);
       return {status:500, json:{message:"Algo deu errado, tente novamente mais tarde"}}
     }
   }

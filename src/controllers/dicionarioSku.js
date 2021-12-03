@@ -45,18 +45,19 @@
     const main = async (req) => {
         
         const body = req.body;
-
         if (!body.hasOwnProperty('Delivery')) return  {status:500, json:{message: "Pedido sem informações de entrega, corrija e tente mais tarde"}}
+        
         // busca CEP do endereço
         const todosCEP = await consultaCEP(body.Delivery);
 
+        
         //busca na tabela da transportadora
         const transportadoras  = consultarTransportadora(body.Delivery, todosCEP);
 
         //monta o dicionario de SKUs com a data de finalização media para tal transportadora em tal CEP
         const dicionario = transportadoras.map((transportadora,index) => {
             return {
-                mediaFinalizacao: transportadora.mediaDias,
+                mediaEntrega: transportadora.mediaDias,
                 infoProduto: {Id: body.Items[index].Id, Sku:  body.Items[index].Sku, Name: body.Items[index].Name},
                 infoEntrega: {nomeTransportadora: transportadora['nomeTransportadora'],nomeRegistro:transportadora['nomeRegistro'], CEP: todosCEP[index].cep,TrackingNumber: body.Delivery[index]['Tracking number']}
             }

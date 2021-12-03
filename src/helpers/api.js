@@ -4,7 +4,6 @@ const {setLog} = require('../helpers/log');
 
 function parseRequest(url){
     return new Promise(function(resolve, reject){
-        console.log('request', url);
         request(url, function (error, response, body) {
             // Lidar com os erros, salvar no log e mandar de volta
             if (error) {

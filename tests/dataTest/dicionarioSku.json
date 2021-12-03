@@ -1,0 +1,57 @@
+{
+    "Id": 12,
+    "Date": "2021-01-01T10:23:23",
+    "Total Value": 12.5,
+    "Status": 3,
+    "Channel": "Marketplace",
+    "Customer":{
+        "Name": "John Junior",
+        "Document": "182731982",
+        "Address": "Junior St. 78",
+        "Number": "901",
+        "Complement": "Apto 88",
+        "Neighborhood": "Central Park",
+        "City": "Big City",
+        "State": "ST"
+    },
+    "Invoice":{
+        "Number": "1232",
+        "Serie": "1",
+        "Access Key": "35210411281358000156550010000361091656273380",
+        "Issue Date": "2021-01-02T11:23:23",
+        "Value": "13.4"
+    },
+    "Delivery":[{
+        "Transporter": "Express Delivery",
+        "Tracking number": "AB312313CA1",
+        "Address": "Avenida Paulista",
+        "Number": "1811",
+        "Complement": "Apto 88",
+        "Neighborhood": "Batistini",
+        "City": "São Paulo",
+        "State": "SP"
+    },
+    {
+        "Transporter": "Trans 1",
+        "Tracking number": "AB312313CA2",
+        "Address": "Rua Barão da Torre",
+        "Number": "1702",
+        "Complement": "Apto 88",
+        "Neighborhood": "Ipanema",
+        "City": "Rio de Janeiro",
+        "State": "RJ"
+    }],
+    "Items": [{
+        "Id": "12_1",
+        "Sku": "PRODUCT_1",
+        "Name": "Awesome Super Product",
+        "Quantity": "2.0",
+        "Price": "2.5"
+    },{
+        "Id": "12_2",
+        "Sku": "PRODUCT_2",
+        "Name": "Awesome Another Product",
+        "Quantity": "1.0",
+        "Price": "1.5"
+    }]
+}
